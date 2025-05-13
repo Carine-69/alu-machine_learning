@@ -24,13 +24,14 @@ y32 = np.exp((r3 / t32) * x3)
 
 np.random.seed(5)
 student_grades = np.random.normal(68, 15, 50)
+
 plt.figure(figsize=(12, 8))
 plt.suptitle('All in One', fontsize='x-small')
-plt.subplot(3, 2, 1)  
+plt.subplot(3, 2, 1)
 plt.plot(y0, 'r')
 plt.xlabel('X', fontsize='x-small')
 plt.ylabel('Y', fontsize='x-small')
-plt.title('y = x^3', fontsize='x-small')
+plt.xlim(0,10)
 
 
 plt.subplot(3, 2, 2)
@@ -46,15 +47,18 @@ plt.xlabel('Time (years)', fontsize='x-small')
 plt.ylabel('Fraction Remaining', fontsize='x-small')
 plt.title('Exponential Decay of C-14', fontsize='x-small')
 plt.yscale('log')
+plt.xlim(0,28650)
 
 
 plt.subplot(3, 2, 4)
 plt.plot(x3, y31, 'r--', label='C-14')
-plt.plot(x3, y32, 'g-', label='Ra-226') 
+plt.plot(x3, y32, 'g-', label='Ra-226')
 plt.xlabel('Time (years)', fontsize='x-small')
 plt.ylabel('Fraction Remaining', fontsize='x-small')
 plt.title('Exponential Decay of Radioactive Elements', fontsize='x-small')
 plt.legend(fontsize='x-small')
+plt.xlim(0,20000)
+plt.ylim(0,1)
 
 
 plt.subplot(3, 2, (5, 6))
@@ -64,9 +68,11 @@ plt.ylabel('Number of Students', fontsize='x-small')
 plt.title('Project A', fontsize='x-small')
 plt.xlim(0, 100)
 plt.xticks(range(0, 101, 10))
-plt.ylim(0, 30)  
+plt.ylim(0, 30)
 
 
-plt.tight_layout()  
-plt.subplots_adjust(top=0.92)  
+plt.tight_layout()
+plt.subplots_adjust(top=0.92)
+
+plt.show()
 
