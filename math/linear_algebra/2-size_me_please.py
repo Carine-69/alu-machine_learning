@@ -7,6 +7,7 @@ Given a matrix, returns the shape of it as a list of integers,
 where each integer represents the size of a corresponding dimension.
 """
 
+
 def matrix_shape(matrix):
     """
     Given a matrix (list of lists), returns the shape of the matrix
@@ -16,7 +17,7 @@ def matrix_shape(matrix):
     matrix (list): The matrix whose shape is to be determined.
 
     Returns:
-    list: A list of integers where each integer corresponds to the 
+    list: A list of integers where each integer corresponds to the
           size of a dimension of the matrix.
     """
     shape = []
@@ -24,4 +25,3 @@ def matrix_shape(matrix):
         shape.append(len(matrix))
         matrix = matrix[0] if matrix else []
     return shape
-
