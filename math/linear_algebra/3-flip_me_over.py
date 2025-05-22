@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 def matrix_transpose(matrix):
     transposed = []
-    for i in range (len(matrix[0])):
+    for i in range(len(matrix[0])):
         row = []
         for a in range(len(matrix)):
 
