@@ -21,8 +21,8 @@ def matrix_transpose(matrix):
     Parameters:
     matrix (list of list of numbers): The
     matrix to transpose. It should be
-    rectangular (i.e., all rows should  
-    have the same number of elements). 
+    rectangular (i.e., all rows should 
+    have the same number of elements).
 
     Returns:
     list of list of numbers: A new transposed matrix.
