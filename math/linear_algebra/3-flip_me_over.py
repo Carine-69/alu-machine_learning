@@ -21,8 +21,8 @@ def matrix_transpose(matrix):
     Parameters:
     matrix (list of list of numbers): The
     matrix to transpose. It should be
-    rectangular (i.e., all rows should 
-    have the same number of elements).
+    rectangular (i.e., all rows should  
+    have the same number of elements). 
 
     Returns:
     list of list of numbers: A new transposed matrix.
@@ -31,7 +31,6 @@ def matrix_transpose(matrix):
     >>> matrix_transpose([[1, 2, 3], [4, 5, 6]])
     [[1, 4], [2, 5], [3, 6]]
     """
-
 
     transposed = []
     for i in range(len(matrix[0])):  # loop over columns
