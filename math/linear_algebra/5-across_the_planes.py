@@ -17,11 +17,3 @@ def add_matrices2D(mat1, mat2):
             row.append(mat1[i][a] + mat2[i][a])
         result.append(row)
     return result
-
-
-# Example usage
-mat1 = [[2, 3, 1], [4, 5, 6], [9, 8, 7]]
-mat2 = [[9, 8, 7], [4, 5, 6], [1, 2, 3]]
-
-result = add_matrices2D(mat1, mat2)
-print(result)
