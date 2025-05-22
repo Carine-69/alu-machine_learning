@@ -7,4 +7,4 @@ def matrix_transpose(matrix):
 
             row.append(matrix[a][i])
         transposed.append(row)
-    return(transposed)
+    return (transposed)
