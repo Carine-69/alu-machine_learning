@@ -3,6 +3,8 @@
 
 module for returning the shape 
 or dimension of any given matrix
+
+Given a matrix, returns the shape of it as a list of integers where each integer represent size of a corresponding dimension    
 """
 
 
