@@ -1,38 +1,40 @@
 #!/usr/bin/env python3
+"""
+module that calculate the
+ determnant of the mtrix
+"""
+
 def determinant(matrix):
     """
-    Calculates the determinant of a square matrix.
+    first we check raise errors
+      in case of invalid input
+    if not list of list
 
-    Parameters:
-        matrix (list of lists): A square matrix (same number of rows and columns)
+    errors:
 
-    Returns:
-        float: The determinant of the matrix, rounded to 10 decimal places
-
-    Raises:
-        TypeError: If the input is not a list of lists
-        ValueError: If the matrix is not square
+    TypeError: input must be a list of lists
+    TypeError: matrix is not square
+     otherwise matrix determinant is
+       calulated in int or float
     """
-
-    
-    if not isinstance(matrix, list) or not all(isinstance(row, list) for row in matrix):
+    if not isinstance(matrix, list) or not all(
+        isinstance(row,list) for row in matrix):
         raise TypeError("matrix must be a list of lists")
-
-    # Check if matrix is square: all rows must have the same length as the number of rows
-    size = len(matrix)
-    if any(len(row) != size for row in matrix):
-        raise ValueError("matrix must be a square matrix")
-
-    # Special case: 0x0 matrix (represented as [[]]) is defined to have determinant = 1
+    
     if matrix == [[]]:
         return 1
+    
+    if len(matrix) != len(matrix[0]):
+        raise ValueError("matrix must be a square matrix")
+    
+    n= len(matrix)
 
-
-    # Convert to NumPy array for matrix operations
-    np_matrix = np.array(matrix)
-
-    # Use NumPy's determinant function
-    det = np.linalg.det(np_matrix)
-
-    # Round result to 10 decimal places to avoid floating-point inaccuracies
-    return round(det, 10)
+    if n == 1:
+        return matrix[0][0]
+    
+    if n ==2:
+        return matrix[0][0] * matrix[1][0]
+    
+    det = 0
+    for c in range(n):
+         det = np.linalg.det(np.array(matrix))
