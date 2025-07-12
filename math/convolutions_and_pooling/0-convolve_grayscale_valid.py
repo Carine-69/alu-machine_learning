@@ -1,31 +1,28 @@
 #!/usr/bin/env python3
-""" Performs convolution on grayscale images"""
+"""Performs a valid convolution on grayscale images"""
 import numpy as np
 
 
 def convolve_grayscale_valid(images, kernel):
-    """Function to convolve the image"""
-    if images.ndim == 4:
-        m, h, w, _ = images.shape
-        # Convert RGB to grayscale
-        images = (0.2989 * images[:, :, :, 0] +
-                  0.5870 * images[:, :, :, 1] +
-                  0.1140 * images[:, :, :, 2])
-    else:
-        m, h, w = images.shape
-
+    """
+    Function that performs a valid convolution on grayscale images.
+    Args:
+    images (numpy.ndarray): A numpy ndarray with shape (m,h,w)
+        containing multiple grayscale images.
+    kernel (numpy.ndaray): A numpy ndarray with shape (kh,kw)
+        containing the kernel for tha convolution.
+    Returns:
+        numpy.ndarray: The convolved images.
+    """
+    m, h, w = images.shape
     kh, kw = kernel.shape
+    output_h = h - kh + 1
+    output_w = w - kw + 1
+    output = np.zeros((m, output_h, output_w))
 
-    # Calculate new dimensions after VALID convolution
-    new_h = h - kh + 1
-    new_w = w - kw + 1
+    for i in range(output_h):
+        for j in range(output_w):
+            region = images[:, i:i + kh, j:j + kw]
+            output[:, i, j] = np.sum(region * kernel, axis=(1, 2))
 
-    # Initialize the array for convolved images
-    output = np.zeros((m, new_h, new_w))
-
-    # Perform the convolution
-    for i in range(new_h):
-        for j in range(new_w):
-            sub_matrix = images[:, i: i + kh, j: j + kw] * kernel
-            output[:, i, j] = np.sum(sub_matrix, axis=(1, 2))
     return output
