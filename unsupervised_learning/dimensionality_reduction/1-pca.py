@@ -19,3 +19,4 @@ def pca(X, ndim):
     T = X_mean @ W
 
     return T
+    
