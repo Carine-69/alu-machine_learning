@@ -27,4 +27,4 @@ def initialize(X, k):
     high = X.max(axis=0)
 
     return np.random.uniform(low, high, size=(k, d))
-    
+      

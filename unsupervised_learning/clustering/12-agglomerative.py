@@ -26,3 +26,4 @@ def agglomerative(X, dist):
     clss = scipy.cluster.hierarchy.fcluster(Z, dist, criterion='distance')
 
     return clss
+    

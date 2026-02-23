@@ -51,3 +51,4 @@ def kmeans(X, k, iterations=1000):
     clss = np.argmin(dists, axis=1)
 
     return C, clss
+    

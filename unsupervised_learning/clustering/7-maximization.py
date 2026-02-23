@@ -36,3 +36,4 @@ def maximization(X, g):
         S[i] = (g[i, :, np.newaxis] * diff).T @ diff / Nk[i]
 
     return pi, m, S
+    

@@ -23,3 +23,4 @@ def variance(X, C):
     var = np.sum(min_dists ** 2)
 
     return var
+    

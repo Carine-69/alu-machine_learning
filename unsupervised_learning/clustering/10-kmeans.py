@@ -19,3 +19,4 @@ def kmeans(X, k):
     clss = model.labels_
 
     return C, clss
+    

@@ -23,3 +23,4 @@ def gmm(X, k):
     bic = model.bic(X)
 
     return pi, m, S, clss, bic
+    
