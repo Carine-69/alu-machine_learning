@@ -19,3 +19,4 @@ def pca(X, var=0.95):
     W = Vt[:nd].T
 
     return W
+    
