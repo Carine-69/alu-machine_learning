@@ -16,6 +16,10 @@ def pca(X, var=0.95):
     U, s, Vh = np.linalg.svd(X)
     cumvar = np.cumsum(s ** 2) / np.sum(s ** 2)
     nd = np.argmax(cumvar >= var) + 1
+<<<<<<< HEAD
     W = Vt[:nd].T
 
     return W
+=======
+    return Vh[:nd].T
+>>>>>>> 1dda5fc1366d665f9a61058724fed1a438d2f4e4
