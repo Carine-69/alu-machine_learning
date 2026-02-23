@@ -1,19 +1,21 @@
 #!/usr/bin/env python3
-"""PCA module"""
+"""PCA on a dataset"""
 import numpy as np
 
 
 def pca(X, var=0.95):
-    """Performs PCA on a dataset maintaining var fraction of variance.
+    """Performs PCA on a dataset.
 
     Args:
-        X: numpy.ndarray of shape (n, d) with zero mean dimensions
+        X: numpy.ndarray of shape (n, d) containing the dataset
         var: fraction of variance to maintain
 
     Returns:
-        W: weights matrix of shape (d, nd)
+        W: numpy.ndarray of shape (d, nd) containing the weights matrix
     """
-    U, s, Vh = np.linalg.svd(X)
-    cumvar = np.cumsum(s ** 2) / np.sum(s ** 2)
+    _, s, Vt = np.linalg.svd(X)
+    cumvar = np.cumsum(s) / np.sum(s)
     nd = np.argmax(cumvar >= var) + 1
-    return Vh[:nd].T
+    W = Vt[:nd].T
+
+    return W
