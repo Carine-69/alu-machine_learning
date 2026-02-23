@@ -13,9 +13,7 @@ def pca(X, ndim):
     Returns:
         T: numpy.ndarray of shape (n, ndim)
     """
-    X_mean = X - np.mean(X, axis=0)
-    _, _, Vt = np.linalg.svd(X_mean)
-    W = Vt[:ndim].T
-    T = X_mean @ W
-
-    return T
+    X_m = X - np.mean(X, axis=0)
+    U, s, Vh = np.linalg.svd(X_m)
+    W = Vh[:ndim].T
+    return np.matmul(X_m, W)
