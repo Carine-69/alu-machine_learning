@@ -28,4 +28,4 @@ def markov_chain(P, s, t=1):
 
     result = np.matmul(s, np.linalg.matrix_power(P, t))
 
-    return result 
+    return result
