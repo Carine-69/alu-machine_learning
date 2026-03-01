@@ -27,5 +27,5 @@ def markov_chain(P, s, t=1):
         return None
 
     result = np.matmul(s, np.linalg.matrix_power(P, t))
-
+    
     return result
