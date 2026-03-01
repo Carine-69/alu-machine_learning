@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Markov Chain"""
+
 import numpy as np
 
 
@@ -27,5 +28,5 @@ def markov_chain(P, s, t=1):
         return None
 
     result = np.matmul(s, np.linalg.matrix_power(P, t))
-    
+
     return result
